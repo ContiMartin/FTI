@@ -1,0 +1,18 @@
+digraph finite_state_machine {
+	rankdir=LR size="8,5"
+	node [shape=doublecircle]
+	"+ - * /"
+	"or and etc"
+	instruccion
+	node [shape=circle]
+	BLOQUE -> instruccion [label=""]
+	BLOQUE -> WHILE [label=""]
+	BLOQUE -> IF [label=""]
+	BLOQUE -> IFELSE [label=""]
+	WHILE -> "or and etc" [label=""]
+	WHILE -> "+ - * /" [label=""]
+	IF -> "or and etc" [label=""]
+	IF -> "+ - * /" [label=""]
+	IFELSE -> CONDICION [label=""]
+	CONDICION -> BLOQUE [label=""]
+}
