@@ -1,0 +1,29 @@
+digraph g {
+	node [height=.1 shape=record]
+	node0 [label="<f1> BLOQUE"]
+	node1 [label="<f0> instruccion ; |<f1> WHILE |<f3> IFELSE |<f4> IF"]
+	node2 [label="<f1> while CONDICION  BLOQUE"]
+	node3 [label="<f0> (CONDICION OPE_ARIT CONDICION) |<f1> numero|<f2> CONDICION OPE_COND CONDICION"]
+	node4 [label="<f1> CONDICION"]
+	node5 [label="<f1> if CONDICION BLOQUE ;"]
+	node6 [label="<f1> if CONDICION BLOQUE else BLOQUE"]
+	node8 [label="<f1> +  -  *  %  /"]
+	node9 [label="<f1> or and etc.."]
+	node10 [label="<f1> [0-9a-zA-Z-_=.]"]
+	node11 [label="<f1> number"]
+	node0:f2 -> node1:f0
+	node0:f2 -> node1:f1
+	node0:f2 -> node1:f3
+	node0:f2 -> node1:f4
+	node1:f1 -> node2:f0
+	node1:f3 -> node6:f1
+	node1:f4 -> node5:f1
+	node2:f1 -> node4:f1
+	node4:f1 -> node3:f0
+	node4:f1 -> node3:f1
+	node4:f1 -> node3:f2
+	node3:f0 -> node8:f1
+	node3:f1 -> node11:f1
+	node3:f2 -> node9:f1
+	node5:f1 -> node4:f1
+}
